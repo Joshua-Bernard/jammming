@@ -12,3 +12,13 @@ body {
     background: rgba(232, 182, 167, 0.60);
     margin-bottom: 60px;
 }
+
+.App-playlist{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1000px;
+}

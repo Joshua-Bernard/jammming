@@ -1,0 +1,8 @@
+.Playlist {
+    border: 1px solid #000;
+    background: rgba(232, 182, 167, 0.60);
+    width: 28.9375rem;
+    height: 32rem;
+    flex-shrink: 0;
+    
+}
