@@ -1,8 +1,39 @@
 .Playlist {
     border: 1px solid #000;
     background: rgba(232, 182, 167, 0.60);
-    width: 28.9375rem;
+    width: 29rem;
     height: 32rem;
     flex-shrink: 0;
-    
+    padding: 20px;
+
+}
+
+.PlaylistTitle {
+    color: #000;
+    font-size: 1.875rem;
+    line-height: normal;
+    margin-bottom: 20px;
+    background-color: unset;
+    border: unset;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #000;
+}
+
+.PlaylistTitle:focus {
+    outline: none;  
+}
+
+.Playlist-save {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin: 20px auto;
+    display: block;
+    font-size: 1.2rem;
+    background-color: #ee5522;
+    color: #fff;
+    cursor: pointer;
 }
