@@ -7,11 +7,13 @@ function TrackList(props) {
     <div className="TrackList">
       {props.tracks &&
         props.tracks.map((track) => {
+          console.log("Current Track:", track);
           return (
             <Track
               key={track.id}
-              trackName={track.name}
-              artist={track.artist}
+              track={track}
+              onAddOrRemove={props.onAddOrRemove}
+              isRemoval={props.isRemoval}
             />
           );
         })}

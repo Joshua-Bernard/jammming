@@ -2,10 +2,17 @@ import React from "react";
 import "./Track.css";
 
 function Track(props) {
+  console.log("Current Track:", props.track);
+
   let action;
+
+  const handleClick = () => {
+    props.onAddOrRemove(props.track);
+  };
+
   if (props.isRemoval) {
     action = (
-      <span class="material-symbols-outlined">
+      <span className="material-symbols-outlined">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           height="24"
@@ -18,7 +25,7 @@ function Track(props) {
     );
   } else {
     action = (
-      <span class="material-symbols-outlined">
+      <span className="material-symbols-outlined">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           height="24"
@@ -34,10 +41,12 @@ function Track(props) {
   return (
     <div className="Track">
       <div className="Track-information">
-        <p className="TrackName">{props.trackName}</p>
-        <p className="TrackArtist">{props.artist}</p>
+        <p className="TrackName">{props.track.name}</p>
+        <p className="TrackArtist">{props.track.artist}</p>
       </div>
-      <button className="Track-action">{action}</button>
+      <button className="Track-action" onClick={handleClick}>
+        {action}
+      </button>
     </div>
   );
 }
