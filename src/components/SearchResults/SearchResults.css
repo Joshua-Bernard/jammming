@@ -1,9 +1,10 @@
 .SearchResults {
     border: 1px solid #000;
     background: rgba(232, 182, 167, 0.60);
-    width: 28.9375rem;
+    width: 29rem;
     height: 32rem;
     flex-shrink: 0;
+    padding: 20px;
 
 }
 
@@ -11,5 +12,5 @@
     color: #000;
     font-size: 1.875rem;
     line-height: normal;
-    margin: 10px;
+    margin-bottom: 20px;
 }
