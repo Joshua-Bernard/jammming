@@ -3,8 +3,6 @@ import "./Playlist.css";
 import TrackList from "../TrackList/TrackList";
 
 function Playlist(props) {
- 
-
   return (
     <div className="Playlist">
       <input
@@ -18,7 +16,7 @@ function Playlist(props) {
         onAddOrRemove={props.onAddOrRemove}
         isRemoval={true}
       />
-      <button className="Playlist-save">SAVE TO SPOTIFY</button>
+      <button className="Playlist-save" onClick={props.onSave} >SAVE TO SPOTIFY</button>
     </div>
   );
 }
