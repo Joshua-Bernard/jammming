@@ -1,54 +1,48 @@
-import React from "react";
+import React, { useCallback } from "react";
+
 import "./Track.css";
 
-function Track(props) {
-  console.log("Current Track:", props.track);
+const Track = (props) => {
+  const addTrack = useCallback(
+    (event) => {
+      props.onAdd(props.track);
+    },
+    [props.onAdd, props.track]
+  );
 
-  let action;
+  const removeTrack = useCallback(
+    (event) => {
+      props.onRemove(props.track);
+    },
+    [props.onRemove, props.track]
+  );
 
-  const handleClick = () => {
-    props.onAddOrRemove(props.track);
+  const renderAction = () => {
+    if (props.isRemoval) {
+      return (
+        <button className="Track-action" onClick={removeTrack}>
+          -
+        </button>
+      );
+    }
+    return (
+      <button className="Track-action" onClick={addTrack}>
+        +
+      </button>
+    );
   };
-
-  if (props.isRemoval) {
-    action = (
-      <span className="material-symbols-outlined">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          height="24"
-          viewBox="0 -960 960 960"
-          width="24"
-        >
-          <path d="M200-440v-80h560v80H200Z" />
-        </svg>
-      </span>
-    );
-  } else {
-    action = (
-      <span className="material-symbols-outlined">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          height="24"
-          viewBox="0 -960 960 960"
-          width="24"
-        >
-          <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
-        </svg>
-      </span>
-    );
-  }
 
   return (
     <div className="Track">
       <div className="Track-information">
-        <p className="TrackName">{props.track.name}</p>
-        <p className="TrackArtist">{props.track.artist}</p>
+        <h3>{props.track.name}</h3>
+        <p>
+          {props.track.artist} | {props.track.album}
+        </p>
       </div>
-      <button className="Track-action" onClick={handleClick}>
-        {action}
-      </button>
+      {renderAction()}
     </div>
   );
-}
+};
 
 export default Track;
