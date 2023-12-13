@@ -1,20 +1,16 @@
 import React from "react";
+
 import "./SearchResults.css";
+
 import TrackList from "../TrackList/TrackList";
 
-function SearchResults(props) {
-  console.log("Current Results:", props.results);
-  
+const SearchResults = (props) => {
   return (
     <div className="SearchResults">
       <h2>Results</h2>
-      <TrackList
-        tracks={props.results}
-        onAddOrRemove={props.onAddOrRemove}
-        isRemoval={false}
-      />
+      <TrackList tracks={props.searchResults} onAdd={props.onAdd} />
     </div>
   );
-}
+};
 
 export default SearchResults;
