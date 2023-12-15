@@ -5,6 +5,7 @@
     height: 32rem;
     flex-shrink: 0;
     padding: 20px;
+    position: relative;
 
 }
 
@@ -36,4 +37,7 @@
     background-color: #ee5522;
     color: #fff;
     cursor: pointer;
-}
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+  }
