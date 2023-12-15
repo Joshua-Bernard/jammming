@@ -1,0 +1,5 @@
+.TrackList {
+  max-height: 80%;
+  overflow-y: auto;
+  padding-right: 10px;
+}
